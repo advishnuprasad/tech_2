@@ -11,12 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120817121846) do
+ActiveRecord::Schema.define(:version => 20120820055942) do
 
   create_table "company_fives", :force => true do |t|
     t.string   "name"
     t.string   "address"
-    t.integer  "phoneno",    :precision => 38, :scale => 0
+    t.integer  "mobile",     :precision => 38, :scale => 0
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+  end
+
+  create_table "company_ones", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.integer  "phone",      :precision => 38, :scale => 0
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
   end
@@ -24,9 +32,17 @@ ActiveRecord::Schema.define(:version => 20120817121846) do
   create_table "company_team_twos", :force => true do |t|
     t.string   "name"
     t.string   "address"
-    t.integer  "phone",      :precision => 38, :scale => 0
+    t.integer  "mobile",     :precision => 38, :scale => 0
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
+  end
+
+  create_table "company_threes", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.integer  "mobile",     :precision => 38, :scale => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "company_zeros", :force => true do |t|
@@ -41,8 +57,9 @@ ActiveRecord::Schema.define(:version => 20120817121846) do
     t.string   "name"
     t.string   "owner"
     t.string   "partner"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
+    t.integer  "company_five_id", :precision => 38, :scale => 0
   end
 
   create_table "team_fours", :force => true do |t|
@@ -67,6 +84,7 @@ ActiveRecord::Schema.define(:version => 20120817121846) do
     t.string   "partner"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "company_three_id", :precision => 38, :scale => 0
   end
 
   create_table "team_twos", :force => true do |t|
